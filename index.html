@@ -7,6 +7,7 @@
   <title>My Resume</title>
 
   <link rel="stylesheet" href="css/index.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -14,6 +15,109 @@
 </head>
 
 <body>
-  <h1>My Resume</h1>
+  <div class="container">
+    <header>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Career</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <section class="top">
+      <img class="logo" src="robinho-image.jpg" alt="robinho football">
+      <div class="top-text">
+        <h1>Robinho - Footballer</h1>
+        <p>I am a professional footballer looking for the right project !</p>
+      </div>
+      <div class="bottom-text">
+        <p>For appearances and other requests please get in touch below.</p>
+        <button>Get in touch</button>
+      </div>
+    </section>
+
+    <section class="middle">
+      <div class="middle-text">
+        <h2>Intro</h2>
+        <p>bla bli blu jahs jlkdahsdljg ashdgahflhs dgfjasdhf;alsj hfjklahsfjlkhasjlk fhaljksfdhljkashdfljkahsd fljkahsljkfhaslj khfjlkfsaa</p>
+      </div>
+
+      <div class="list-skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>Goal scoring ability from outside and inside box</li>
+          <li>Ability to play all attacking positions</li>
+          <li>Able to beat man one on one</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="career">
+      <h2>Career</h2>
+      <div class="career-table">
+        <div class="teams">
+          <h4>Teams</h4>
+          <ul>
+            <li>Santos</li>
+            <li>Real Madrid</li>
+            <li>Manchester City</li>
+            <li>Milan</li>
+          </ul>
+        </div>
+        <div class="years">
+          <h4>Years</h4>
+          <ul>
+            <li>2003-2006</li>
+            <li>2006-2010</li>
+            <li>2010-2012</li>
+            <li>2012-2015</li>
+          </ul>
+        </div>
+        <div class="games-played">
+            <h4>Games played</h4>
+            <ul>
+              <li>100</li>
+              <li>200</li>
+              <li>100</li>
+              <li>50</li>
+            </ul>
+        </div>
+        <div class="goals">
+            <h4>Goals</h4>
+            <ul>
+              <li>30</li>
+              <li>110</li>
+              <li>65</li>
+              <li>24</li>
+            </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-top">
+      <div class="contact-text">
+        <h2>Contact me here</h2>
+        <p>Please leave a detailed message. </p>
+      </div>
+    </section>
+
+    <section class="contact-form">
+        <div class="column">
+            <label for="Name">Name</label>
+            <input type="text" id="name" name="name" placeholder="">
+            <label for="affiliation">Affiliation</label>
+            <input type="text" id="affiliation" name="agent" placeholder="">
+            </select>
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="" style="height:170px"></textarea>
+            <input type="submit" value="Submit">
+        </div>
+    </section>
+
+    
+
+    
+  </div>
 </body>
 </html>
