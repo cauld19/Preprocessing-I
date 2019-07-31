@@ -172,9 +172,15 @@ body {
   background-color: #bbd9f1ee;
 }
 /*variable */
+/* main content */
 .container {
   max-width: 1000px;
   margin: auto;
+}
+@media (max-width: 500px) {
+  .container {
+    width: 80%;
+  }
 }
 nav {
   display: flex;
@@ -186,8 +192,25 @@ nav a {
   margin: 1rem;
   font-size: 1.2rem;
 }
+@media (max-width: 500px) {
+  nav a {
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+    text-align: center;
+  }
+  nav a header nav a:first-child {
+    border-top: 1px solid lightgray;
+  }
+}
 nav a:hover {
   color: lightgray;
+}
+@media (max-width: 500px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .top {
   display: flex;
@@ -236,6 +259,13 @@ nav a:hover {
   display: flex;
   margin: 2rem 0rem 2rem 0rem;
 }
+@media (max-width: 500px) {
+  .middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .middle-text {
   flex-basis: 50%;
   display: flex;
@@ -254,6 +284,12 @@ nav a:hover {
   flex-direction: column;
   flex-basis: 50%;
   padding-left: 0.5rem;
+}
+@media (max-width: 500px) {
+  .list-skills {
+    padding: 0;
+    width: 100%;
+  }
 }
 .list-skills h2 {
   margin: 1rem 0rem 1rem 0rem;
@@ -287,6 +323,12 @@ nav a:hover {
   border-top: 1px solid lightgray;
   padding: 0.8rem 0rem 0.4rem 0rem;
 }
+@media (max-width: 500px) {
+  .career-table {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .teams {
   display: flex;
   flex-direction: column;
@@ -305,6 +347,11 @@ nav a:hover {
 }
 .teams li:nth-child(4) {
   background-color: #bbd9f1ee;
+}
+@media (max-width: 500px) {
+  .teams {
+    padding-left: 0;
+  }
 }
 .games-played {
   display: flex;

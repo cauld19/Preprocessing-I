@@ -50,6 +50,7 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
 * {
     box-sizing: border-box;
 }
@@ -112,11 +113,15 @@ html, body {
 @button-color: lightslategray;
 
 
-
+/* main content */
 
 .container {
 	max-width: 1000px;
 	margin: auto;
+
+	@media (max-width: 500px) {
+		width: 80%;
+	}
 }
 
 nav {
@@ -128,10 +133,26 @@ nav {
 		text-decoration: none;
 		margin: 1rem;
 		font-size: 1.2rem;
+
+		@media (max-width: 500px) {
+			border-bottom: 1px solid lightgray;
+			width: 100%;
+			text-align: center;
+
+			header nav a:first-child{
+			border-top: 1px solid lightgray;
+			}
+		}
 	}
+
 
 	a:hover {
 		color: lightgray;
+	}
+
+	@media (max-width: 500px) {
+		.flex-column();
+		align-items: center;
 	}
 }
 
@@ -189,6 +210,11 @@ nav {
 .middle {
 	display: flex;
 	.section-margin();
+
+	@media (max-width: 500px) {
+		.flex-column();
+		align-items: center;
+	  }
 }
 
 .middle-text {
@@ -209,6 +235,11 @@ nav {
 	.flex-column();
 	flex-basis: 50%;
 	padding-left: 0.5rem;
+
+	@media (max-width: 500px) {
+		padding: 0;
+		width: 100%;
+	  }
 
 	h2 {
 		.header-2();
@@ -246,12 +277,20 @@ nav {
 		border-top: 1px solid lightgray;
 		padding: 0.8rem 0rem 0.4rem 0rem;
 	}
+
+	@media (max-width: 500px) {
+		.flex-column();
+	  }
 }
 
 .teams {
 	.career-column();
 	.table();
 	padding-left: 0.5rem;
+
+	@media (max-width: 500px) {
+		padding-left: 0;
+	  }
 }
 
 .games-played {
