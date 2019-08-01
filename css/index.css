@@ -1,1 +1,514 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  font-family: 'Playfair Display', serif;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+/* mixin */
+.p-mixin {
+  margin: 0.5rem 0 1rem 0;
+}
+.p-mixin-top {
+  margin: 0.5rem 0 1.5rem 0;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.header-2 {
+  margin: 1rem 0rem 1rem 0rem;
+  font-size: 1.5rem;
+}
+.section-margin {
+  margin: 2rem 0rem 2rem 0rem;
+}
+.career-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 25%;
+}
+.table li {
+  padding: 0.4rem 0rem 0.4rem 0rem;
+  border-bottom: 1px solid lightgray;
+}
+.table li:first-child {
+  border-top: 1px solid lightgray;
+}
+.table li:nth-child(2) {
+  background-color: #bbd9f1ee;
+}
+.table li:nth-child(4) {
+  background-color: #bbd9f1ee;
+}
+/*variable */
+/* main content */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 1.5%;
+}
+@media (max-width: 500px) {
+  .container {
+    width: 80%;
+  }
+}
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+nav a {
+  color: lightslategray;
+  text-decoration: none;
+  margin: 1rem;
+  font-size: 1.2rem;
+}
+@media (max-width: 500px) {
+  nav a {
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+    text-align: center;
+  }
+  nav a header nav a:first-child {
+    border-top: 1px solid lightgray;
+  }
+}
+nav a:hover {
+  color: lightgray;
+}
+@media (max-width: 500px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.top {
+  display: flex;
+  flex-direction: column;
+  background-color: #bbd9f1ee;
+  padding: 2rem 2rem 2rem 2rem;
+}
+.top .logo {
+  width: 100%;
+}
+.top-text {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  margin: 1rem 0 1rem 0;
+}
+.top-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.top-text p {
+  margin: 0.5rem 0 1.5rem 0;
+}
+.bottom-text {
+  display: flex;
+  flex-direction: column;
+}
+.bottom-text button {
+  display: block;
+  height: 3rem;
+  width: 11rem;
+  font-size: 1.1rem;
+  background-color: lightslategray;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+}
+.bottom-text button:hover {
+  background-color: white;
+  color: lightslategray;
+}
+.bottom-text p {
+  margin: 0.5rem 0 1.5rem 0;
+}
+/* middle */
+.middle {
+  display: flex;
+  margin: 2rem 0rem 2rem 0rem;
+}
+@media (max-width: 500px) {
+  .middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.middle-text {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 0.5rem;
+}
+.middle-text h2 {
+  margin: 1rem 0rem 1rem 0rem;
+  font-size: 1.5rem;
+}
+.middle-text p {
+  margin: 0.5rem 0 1rem 0;
+}
+.list-skills {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  padding-left: 0.5rem;
+}
+@media (max-width: 500px) {
+  .list-skills {
+    padding: 0;
+    width: 100%;
+  }
+}
+.list-skills h2 {
+  margin: 1rem 0rem 1.6rem 0rem;
+  font-size: 1.5rem;
+}
+.list-skills li {
+  border: 1px solid lightgray;
+  border-top: none;
+  width: 100%;
+  padding: 0.5rem;
+}
+.list-skills li:first-child {
+  border-top: 1px solid lightgray;
+}
+.career {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0rem 2rem 0rem;
+}
+.career h2 {
+  margin: 1rem 0rem 1rem 0rem;
+  font-size: 1.5rem;
+}
+.career-table {
+  display: flex;
+  justify-content: space-between;
+}
+.career-table h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  border-top: 1px solid lightgray;
+  padding: 0.8rem 0rem 0.4rem 0rem;
+}
+@media (max-width: 500px) {
+  .career-table {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.teams {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 25%;
+  padding-left: 0.5rem;
+}
+.teams li {
+  padding: 0.4rem 0rem 0.4rem 0rem;
+  border-bottom: 1px solid lightgray;
+}
+.teams li:first-child {
+  border-top: 1px solid lightgray;
+}
+.teams li:nth-child(2) {
+  background-color: #bbd9f1ee;
+}
+.teams li:nth-child(4) {
+  background-color: #bbd9f1ee;
+}
+@media (max-width: 500px) {
+  .teams {
+    padding-left: 0;
+  }
+}
+.games-played {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 25%;
+}
+.games-played li {
+  padding: 0.4rem 0rem 0.4rem 0rem;
+  border-bottom: 1px solid lightgray;
+}
+.games-played li:first-child {
+  border-top: 1px solid lightgray;
+}
+.games-played li:nth-child(2) {
+  background-color: #bbd9f1ee;
+}
+.games-played li:nth-child(4) {
+  background-color: #bbd9f1ee;
+}
+.years {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 25%;
+}
+.years li {
+  padding: 0.4rem 0rem 0.4rem 0rem;
+  border-bottom: 1px solid lightgray;
+}
+.years li:first-child {
+  border-top: 1px solid lightgray;
+}
+.years li:nth-child(2) {
+  background-color: #bbd9f1ee;
+}
+.years li:nth-child(4) {
+  background-color: #bbd9f1ee;
+}
+.goals {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 25%;
+}
+.goals li {
+  padding: 0.4rem 0rem 0.4rem 0rem;
+  border-bottom: 1px solid lightgray;
+}
+.goals li:first-child {
+  border-top: 1px solid lightgray;
+}
+.goals li:nth-child(2) {
+  background-color: #bbd9f1ee;
+}
+.goals li:nth-child(4) {
+  background-color: #bbd9f1ee;
+}
+.career {
+  display: none;
+}
+/* contact */
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-text h2 {
+  margin: 1rem 0rem 1rem 0rem;
+  font-size: 1.5rem;
+}
+.contact-text p {
+  margin: 0.5rem 0 1rem 0;
+}
+.column {
+  width: 50%;
+  margin: 0 auto;
+}
+input[type=text],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid lightgray;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  resize: vertical;
+}
+input[type=submit] {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  background-color: lightslategray;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #bbd9f1ee;
+  color: black;
+}
+/* table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+tr:nth-of-type(even) {
+  background: #bbd9f1ee;
+}
+th {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  border-top: 1px solid lightgray;
+  padding: 0.8rem 0rem 0.8rem 0.5rem;
+  text-align: left;
+}
+td {
+  padding: 0.5rem;
+  border-bottom: 1px solid lightgray;
+  text-align: left;
+}
+@media (max-width: 500px) {
+  table,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  th {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  td {
+    border-bottom: 1px solid lightgray;
+    position: relative;
+    padding-left: 50%;
+  }
+  td:before {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.6rem;
+    width: 45%;
+    padding-right: 1rem;
+    white-space: nowrap;
+  }
+  td:nth-of-type(1):before {
+    content: "Team";
+  }
+  td:nth-of-type(2):before {
+    content: "Years";
+  }
+  td:nth-of-type(3):before {
+    content: "Games";
+  }
+  td:nth-of-type(4):before {
+    content: "Goals";
+  }
+}

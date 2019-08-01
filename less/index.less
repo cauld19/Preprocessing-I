@@ -22,6 +22,7 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
+	font-family: 'Playfair Display', serif;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -49,11 +50,373 @@ table {
 }
 
 /* Set every element's box-sizing to border-box */
+
 * {
     box-sizing: border-box;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
+
+/* mixin */
+
+.p-mixin {
+	margin: 0.5rem 0 1rem 0;
+}
+
+.p-mixin-top {
+	margin: 0.5rem 0 1.5rem 0;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.header-2() {
+	margin: 1rem 0rem 1rem 0rem;
+	font-size: 1.5rem;
+}
+
+.section-margin {
+	margin: 2rem 0rem 2rem 0rem;
+}
+
+.career-column {
+	.flex-column;
+	flex-basis: 25%;
+}
+
+.table {
+	li {
+		padding: 0.4rem 0rem 0.4rem 0rem;
+		border-bottom: 1px solid lightgray;
+		}
+	
+		li:first-child {
+			border-top: 1px solid lightgray;
+		}
+	
+		li:nth-child(2) {
+			background-color: @background-color;
+		}
+	
+		li:nth-child(4) {
+			background-color: @background-color;
+		}
+}
+
+/*variable */
+
+@background-color: #bbd9f1ee;
+@button-color: lightslategray;
+
+
+/* main content */
+
+.container {
+	max-width: 1000px;
+	margin: auto;
+	padding: 0 1.5%;
+
+	@media (max-width: 500px) {
+		width: 80%;
+	}
+}
+
+nav {
+	display: flex;
+	justify-content: flex-end;
+
+	a {
+		color: @button-color;
+		text-decoration: none;
+		margin: 1rem;
+		font-size: 1.2rem;
+
+		@media (max-width: 500px) {
+			border-bottom: 1px solid lightgray;
+			width: 100%;
+			text-align: center;
+
+			header nav a:first-child{
+			border-top: 1px solid lightgray;
+			}
+		}
+	}
+
+
+	a:hover {
+		color: lightgray;
+	}
+
+	@media (max-width: 500px) {
+		.flex-column();
+		align-items: center;
+	}
+}
+
+.top {
+	.flex-column();
+	background-color: @background-color;
+	padding: 2rem 2rem 2rem 2rem;
+
+	.logo {
+		width: 100%;
+	}
+}
+	
+.top-text {
+	width: 100%;
+	border-bottom: 1px solid gray;
+	margin: 1rem 0 1rem 0;
+		
+	h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	p {
+		.p-mixin-top();
+	}
+}
+
+.bottom-text {
+	.flex-column();
+
+	button {
+		display: block;
+		height: 3rem;
+		width: 11rem;
+		font-size: 1.1rem;
+		background-color: @button-color;
+		color: white;
+		border: none;
+		border-radius: 0.5rem;
+	}
+
+	button:hover {
+		background-color:white;
+		color: @button-color;
+	  }
+
+	p {
+		.p-mixin-top();
+	}
+}
+
+/* middle */
+
+.middle {
+	display: flex;
+	.section-margin();
+
+	@media (max-width: 500px) {
+		.flex-column();
+		align-items: center;
+	  }
+}
+
+.middle-text {
+	flex-basis: 50%;
+	.flex-column();
+	padding-right: 0.5rem;
+
+	h2 {
+		.header-2();
+	}
+
+	p {
+		.p-mixin();
+	}
+}
+
+.list-skills {
+	.flex-column();
+	flex-basis: 50%;
+	padding-left: 0.5rem;
+
+	@media (max-width: 500px) {
+		padding: 0;
+		width: 100%;
+	  }
+
+	h2 {
+		margin: 1rem 0rem 1.6rem 0rem;
+		font-size: 1.5rem;
+	}
+	
+	li {
+		border: 1px solid lightgray;
+		border-top: none;
+		width: 100%;
+		padding: 0.5rem;
+	}
+		
+	li:first-child {
+		border-top: 1px solid lightgray;
+	}
+}
+
+
+.career {
+	.flex-column();
+	.section-margin();
+
+	h2 {
+		.header-2();
+	}
+}
+
+.career-table {
+	display: flex;
+	justify-content: space-between;
+
+	h4 {
+		font-size: 1.2rem;
+		margin-bottom: 0.5rem;
+		border-top: 1px solid lightgray;
+		padding: 0.8rem 0rem 0.4rem 0rem;
+	}
+
+	@media (max-width: 500px) {
+		.flex-column();
+	  }
+}
+
+.teams {
+	.career-column();
+	.table();
+	padding-left: 0.5rem;
+
+	@media (max-width: 500px) {
+		padding-left: 0;
+	  }
+}
+
+.games-played {
+	.career-column();
+	.table();
+}
+
+.years {
+	.career-column();
+	.table();
+}
+
+.goals {
+	.career-column();
+	.table();
+}
+
+.career {
+	display: none;
+}
+
+/* table */
+
+table { 
+	width: 100%; 
+	border-collapse: collapse;
+} 
+  
+tr:nth-of-type(even) { 
+	background: @background-color; 
+}
+	
+th { 
+	font-size: 1.2rem;
+	margin-bottom: 0.5rem;
+	border-top: 1px solid lightgray;
+	padding: 0.8rem 0rem 0.8rem 0.5rem;
+	text-align: left;
+}
+
+td { 
+	padding: 0.5rem; 
+	border-bottom: 1px solid lightgray;
+	text-align: left; 
+}
+
+
+  @media (max-width: 500px)  {
+
+	table, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	th { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	td { 
+		border-bottom: 1px solid lightgray;
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		position: absolute;
+		top: 0.6rem;
+		left: 0.6rem;
+		width: 45%; 
+		padding-right: 1rem; 
+		white-space: nowrap;
+	}
+
+	td:nth-of-type(1):before { content: "Team"; }
+	td:nth-of-type(2):before { content: "Years"; }
+	td:nth-of-type(3):before { content: "Games"; }
+	td:nth-of-type(4):before { content: "Goals"; }
+}
+
+/* contact */
+
+.contact-text {
+	.flex-column();
+	align-items: center;
+
+	h2 {
+		.header-2();
+	}
+
+	p {
+		.p-mixin();
+	}
+}
+
+
+.column {
+	width: 50%;
+	margin: 0 auto;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 1.2rem;
+    border: 1px solid lightgray;
+    margin-top: 0.rem;
+    margin-bottom: 1.5rem;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    background-color: @button-color;
+    color: white;
+    padding: 1.2rm 2rem;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+	background-color:@background-color;
+	color: black;
+  }
 
